@@ -1,0 +1,6 @@
+---
+- name: Security Upgrades on Ubuntu and Red Hat
+  hosts: all
+  become: yes
+  roles:
+    - security_update
