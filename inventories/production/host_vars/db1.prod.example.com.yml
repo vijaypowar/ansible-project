@@ -1,0 +1,3 @@
+ansible_host: 10.20.1.120
+ansible_user: dbadmin
+backup: true

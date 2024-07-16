@@ -1,0 +1,3 @@
+ansible_host: 10.20.1.111
+ansible_user: webadmin
+special_setting: false

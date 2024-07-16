@@ -1,0 +1,19 @@
+---
+- name: Security Upgrades on Ubuntu and Red Hat
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Gather facts about the system
+      ansible.builtin.setup:
+
+    - name: Security upgrades on Ubuntu
+      ansible.builtin.shell: "apt-get upgrade -y"
+      when: ansible_facts['os_family'] == "Debian"
+      notify: restart_services
+
+    - name: Security upgrades on Red Hat
+      ansible.builtin.shell: "yum update --security -y"
+      when: ansible_facts['os_family'] == "RedHat"
+      notify: restart_services
+      

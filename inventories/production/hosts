@@ -1,0 +1,17 @@
+[web_servers]
+web1.prod.example.com ansible_host=10.20.1.110 ansible_user=webadmin
+web2.prod.example.com ansible_host=10.20.1.111 ansible_user=webadmin
+
+[db_servers]
+db1.prod.example.com ansible_host=10.20.1.120 ansible_user=dbadmin
+db2.prod.example.com ansible_host=10.20.1.121 ansible_user=dbadmin
+
+[all:children]
+web_servers
+db_servers
+
+[web_servers:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[db_servers:vars]
+ansible_python_interpreter=/usr/bin/python3
