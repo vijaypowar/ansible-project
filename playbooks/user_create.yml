@@ -1,0 +1,7 @@
+---
+- name: Create Admin and normal users on servers
+  hosts: all
+  become: yes
+  roles:
+    - admin_user_create
+    - user_create

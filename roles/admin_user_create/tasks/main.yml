@@ -1,0 +1,12 @@
+---
+- name: Ensure admin user exists
+  user:
+    name: admin
+    state: present
+    groups: "sudo"
+    append: yes
+    create_home: yes
+    shell: /bin/bash
+    password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      vault1_data_for_admin_password

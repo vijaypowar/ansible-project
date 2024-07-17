@@ -1,0 +1,12 @@
+---
+- name: Ensure user exists
+  user:
+    name: vijay
+    state: present
+    groups: "users"
+    append: yes
+    create_home: yes
+    shell: /bin/bash
+    password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      vault2_data_for_user_password
